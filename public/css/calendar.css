@@ -1,0 +1,77 @@
+#monthbox{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+
+    padding: 0;
+}
+
+.daybox{
+    width: 14.285%;
+    min-height: 5.5em;
+
+    color: #fff;
+    background-color: #0002;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.4em;
+
+    /* text-transform: capitalize; */
+    /* font-weight: bold; */
+
+    outline: 1px #fff3 solid;
+
+
+    font-family: monospace;
+}
+
+
+
+.tagbox{
+    color: #000;
+
+    width: 14.28%;
+    height: 3em;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: #fff;
+}
+
+.errbox{
+    color: #fff;
+
+    width: 100%;
+    height: 3em;
+    
+    text-align: center;
+    margin: 2em 0;
+}
+
+.errbox > a{
+    font-size: 2em;
+
+    color: #ccf;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: .1s ease-in 0s;
+}
+
+.errbox > a:hover{
+    transform: scale(1.015);
+}
+
+a{
+    text-decoration: none;
+    color: #ccf;
+
+}

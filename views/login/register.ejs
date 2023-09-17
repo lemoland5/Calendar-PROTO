@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <script defer src="js/login.js"></script>
+    <script defer src="js/register.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Register</title>
+</head>
+<body>
+    <div id="container">
+
+        <%-include('./../navbar.ejs', {user : user})%>
+
+    
+        <h1>REGISTER</h1>
+
+        <div id="mainbox">
+
+            <form action="/login" method="POST">
+                <label for="email">email</label>
+                <input type="email" name="email" id="email">
+                <p class="smalltext" id="emailerror">invalid email</p>
+
+
+                <label for="password">password</label>
+                <div id="passwordcon">
+                    <input type="password" name="password" id="inputpassword" onfocus="this.removeAttribute('readonly');">
+                    <img src="img/passwordhidden.png" alt="eye icon for password visibility" id="visbutton">
+                </div>
+                <p class="smalltext">minimum length 8, letters and numbers required</p>
+
+                <label for="password2">repeat password</label>
+                <input type="password" name="password2" id="password2">
+                <p class="smalltext" id="passworderror">password doesn't match</p>
+
+                
+                <input type="text" name="type" value="user" style="display: none;">
+
+                <input type="submit" value="register" id="registerbutton">
+            </form>
+
+
+        </div>
+
+    </div>
+</body>
+</html>

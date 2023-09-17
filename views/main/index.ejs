@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/chart.css">
+
+    <script defer src="js/date.js"></script>
+    <script defer src="js/main_submit.js"></script>
+    <script defer src="js/main.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Submit day</title>
+</head>
+<body>
+
+    <div id="container">
+
+        <%-include('./../navbar.ejs', {user : user})%>
+
+
+        <h1> HOW WAS YOUR DAY? </h1>
+
+        <div id="chart">
+            <div class="line vertical" id="lineVertical">
+                <p>POSITIVE</p> 
+            </div>
+            
+            <div class="line horizontal" id="lineHorizontal">
+                <p>EVENTFUL</p>
+            </div>
+
+            <div id="pointer"></div>
+
+            <canvas id="canvas" hidden>
+                this is indeed a canvas
+            </canvas>
+
+        </div>
+
+        <div id="preview">
+            <%if(user != undefined){%>
+                <p id="reactionpreview">Your day was: </p>
+                <div id="colorpreview"></div>
+            
+                <br>
+            
+                <form action="#" id="mainform" method="POST">
+                    <input type="submit" value="SUBMIT" id="formsubmit">
+                    <input type="text" name="tx" id="formtx" style="display: none;">
+                    <input type="text" name="ty" id="formty" style="display: none;">
+                    <input type="text" name="color" id="formcolor" style="display: none;">
+                    <input type="text" name="reaction" id="formreaction" style="display: none;">
+                    <input type="text" name="date" id="formdate" style="display: none;">
+                    <input type="text" name="week" id="formweek" style="display: none;">
+            
+                    <input type="text" name="type" value="day" style="display: none;">
+                </form>        
+
+
+                <p id="submiterror" class="smalltext"></p>
+
+            <%}else{%>
+
+                <div class="errbox">
+                    <a href="/login" id="aerror">Login to submit days</a>
+                </div>
+
+            <%}%>
+
+            <script>
+                var doc = '<%- JSON.stringify(doc) %>';
+                var lastDay = JSON.parse(doc);
+            </script>
+            
+        </div>
+
+    </div>
+    
+</body>
+</html>

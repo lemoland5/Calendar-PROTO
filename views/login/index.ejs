@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <script defer src="js/login.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Login</title>
+</head>
+<body>
+    <div id="container">
+
+        <%-include('./../navbar.ejs', {user : user})%>
+    
+        <h1>LOGIN</h1>
+
+        <div id="mainbox">
+
+            <form action="#" method="POST" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
+
+                <label for="email">email</label>
+
+                <div id="emailcon">
+                    <input type="email" name="email" onfocus="this.removeAttribute('readonly');">
+                </div>
+
+
+                <label for="password">password</label>
+
+                <div id="passwordcon">
+                    <input type="password" name="password" id="inputpassword" onfocus="this.removeAttribute('readonly');">
+                    <img src="img/passwordhidden.png" alt="eye icon for password visibility" id="visbutton">
+                </div>
+
+                <p id="pwrongpassword">
+
+                    <%if(success == false){%>
+                        incorrect password or email
+                    <%}%>
+
+                </p>
+
+                <input type="text" name="type" value="login" style="display: none;">
+
+
+                <input type="submit" value="login" id="formsubmit">
+            </form>
+
+            <div id="additionaloptions">
+
+                <a href="/register" id="aregister">Create account</a>
+
+                <%if(user != undefined){%>
+                    <a href="/logout" id="alogout">Logout</a>
+                <%}%>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

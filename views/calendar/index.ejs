@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script defer src="js/date.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Your calendar</title>
+</head>
+<body>
+    <div id="container">
+        
+        <%-include('./../navbar.ejs', {user : user})%>
+        
+        <%if(user != undefined){%>
+            <h1>YOUR CALENDAR</h1>
+            
+            <div id="monthbox">
+                
+                <div class="tagbox" id="tag0">mon</div>
+                <div class="tagbox" id="tag1">tue</div>
+                <div class="tagbox" id="tag2">wed</div>
+                <div class="tagbox" id="tag3">thu</div>
+                <div class="tagbox" id="tag4">fri</div>
+                <div class="tagbox" id="tag5">sat</div>
+                <div class="tagbox" id="tag6">sun</div>
+                
+                
+                <%if(doc.length > 0){%>
+                
+                <script>
+                    var doc = '<%- JSON.stringify(doc) %>';
+                    var dayData = JSON.parse(doc)
+                </script>
+
+                <script defer src="js/calendar.js"></script>
+
+                <%}else{%>
+
+                    <div class="errbox">
+                        <a href="/..">Submit a day to get started</a>
+                    </div>
+                
+                <%}%>
+    
+            </div>
+
+        <%}else{%>
+
+            <h1>
+                
+                <a href="./../login">LOGIN TO VIEW YOUR CALENDAR</a>
+            </h1>
+
+
+            <div id="monthbox" class="shortmonthbox">
+    
+                <div class="tagbox" id="tag0">mon</div>
+                <div class="tagbox" id="tag1">tue</div>
+                <div class="tagbox" id="tag2">wed</div>
+                <div class="tagbox" id="tag3">thu</div>
+                <div class="tagbox" id="tag4">fri</div>
+                <div class="tagbox" id="tag5">sat</div>
+                <div class="tagbox" id="tag6">sun</div>
+    
+            </div>
+
+
+        <%}%>
+    
+        
+
+    </div>
+</body>
+</html>

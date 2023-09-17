@@ -1,0 +1,14 @@
+<nav>
+    <a href="./" id="home">HOME</a>
+
+
+    <a href="./calendar">VIEW CALENDAR</a>
+    
+    <a href="./login">
+        <%if(user != undefined){%>
+            <%=user%>
+        <%}else{%>
+            LOGIN
+        <%}%>
+    </a>
+</nav>

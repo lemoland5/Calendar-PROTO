@@ -1,0 +1,157 @@
+
+#mainbox{
+    width: 20vw;
+    height: auto;
+
+    background-color: #246;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 30px;
+
+    border-radius: 25px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    row-gap: .3rem;
+
+    margin-top: 5%;
+}
+
+label{
+    user-select: none;
+}
+
+input[type="email"], input[type="password"], input[type="text"]{
+    width: 100%;
+    height: 2rem;
+
+    
+    font-family: raleway, monospace;
+    font-weight: bold;
+
+    background-color: #989898;
+    border: none;
+
+    border-radius: 10px;
+
+    transition: .1s ease-in-out 0s;
+}
+
+input[type="email"]:hover, input[type="password"]:hover, input[type="text"]:hover{
+    background-color: #bbb;
+}
+
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus{
+    background-color: #eee;
+    outline: 0;
+}
+
+input[type="submit"]{
+    background-color: #04aaa2;
+    border: none;
+
+
+    font-family: raleway, monospace;
+    font-weight: bold;
+
+    text-align: center;
+
+    border-radius: 40px;
+    color: white;
+    padding: 16px 0 16px 0;
+    text-decoration: none;
+    margin-top: 10%;
+    cursor: pointer;
+
+    width: 30%;
+
+    align-self: center;
+
+    margin: 10px;
+
+    transition: .2s ease-in-out 0s;
+}
+
+input[type="submit"]:not([disabled]):hover{
+    cursor: pointer;
+    background: #FFF;
+    color: #000;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(162, 196, 250);
+    font-weight: bolder;
+
+    transition: .1s ease-in-out 0s;
+}
+
+a:hover{
+    color: #fff;
+}
+
+a#alogout{
+    font-size: .65em;
+}
+
+#additionaloptions{
+    background-color: rgb(9, 86, 124);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: .7em;
+    border-radius: 20px;
+
+    margin-top: 5%;
+}
+
+#pwrongpassword{
+    font-size: .5em;
+    margin: 0;
+
+    color: #f77;
+}
+
+#passwordcon{
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+#passwordcon img{
+
+    position: absolute;
+    height: 1.2em;
+
+    right: 1px;
+
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    transition: .1s ease-in-out 0s;
+    
+}
+
+#passwordcon img:hover{
+    filter: invert(70%)
+}
+
+input[type="submit"]:disabled{
+    background-color: #334 !important;
+    color: #668a;
+}
+
+input[type="submit"]:disabled:hover{
+    cursor: default;
+}
